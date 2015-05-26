@@ -1,5 +1,5 @@
-<script type="text/javascript" src="static/js/jquery.min.js"></script>
-<script src="static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	 {{if not .Context.IsLogin}}
 		// $('#form-signup-submit').click(function(e){

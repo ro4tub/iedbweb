@@ -26,7 +26,7 @@ func init() {
 	// 编辑游戏
 	beego.Router("/game/:name/edit", &controllers.GameController{}, "get:EditGame")
 	// 保存游戏
-	beego.Router("/game", &controllers.GameController{}, "put:SaveGame")
+	beego.Router("/editgame", &controllers.GameController{}, "post:SaveGame")
 	// 查看游戏的
 	beego.Router("/history/:id", &controllers.GameController{}, "get:GetEditHistory")
 	beego.Router("/audit", &controllers.UserController{}, "get:GetMyAudit")

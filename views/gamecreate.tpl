@@ -1,11 +1,11 @@
-		<form class="form-gamecreate">
+		<form class="form-gamecreate" method="post" action="/game" enctype="multipart/form-data">
 		  <div class="form-group">
 		    <label for="inputGameName">游戏名字</label>
-		    <input type="text" class="form-control" id="inputGameName" placeholder="输入游戏名字">
+		    <input type="text" class="form-control" id="inputGameName" name="gamename" placeholder="输入游戏名字">
 		  </div>
 		  <div class="form-group">
 		    <label for="inputGameGenre">游戏类型</label>
-			<select class="form-control" id="inputGameGenre" >
+			<select class="form-control" id="inputGameGenre" name="gamegenre">
 			  <option value="1">动作</option>
 			  <option value="2">动作冒险</option>
 			  <option value="3">冒险解密</option>
@@ -20,7 +20,7 @@
 		  </div>
 		  <div class="form-group">
 		    <label for="inputGamePlatform">游戏平台</label>
-			<select class="form-control" id="inputGamePlatform">
+			<select class="form-control" id="inputGamePlatform" name="gameplatform">
 			  <option value="1">iOS</option>
 			  <option value="2">Android</option>
 			  <option value="3">Xbox 360</option>
@@ -34,20 +34,20 @@
 		  </div>
 		  <div class="form-group">
 		    <label for="inputGameTag">自定义标签</label>
-		    <input type="text" class="form-control" id="inputGameTag" data-role="tagsinput" placeholder="输入">
+		    <input type="text" class="form-control" id="inputGameTag" name="gametags" data-role="tagsinput" placeholder="输入">
 		  </div>
 		  <div class="form-group">
 		    <label for="inputGameLogo">游戏Logo</label>
-		    <input type="file" id="inputGameLogo" class="file">
+		    <input type="file" id="inputGameLogo" name="gamelogo" class="file">
 		  </div>
 		  <div class="form-group">
 		    <label for="inputGameSimpleDesc">游戏简单描述(140字)</label>
-		    <textarea class="form-control" id="inputGameSimpleDesc" rows="3" placeholder="概述">
+		    <textarea class="form-control" id="inputGameSimpleDesc" name="gamesimpledesc" rows="3" placeholder="概述">
 			</textarea>
 		  </div>
 		  <div class="form-group">
 		    <label for="inputGameDetail">游戏详细描述</label>
-		    <textarea class="form-control" id="inputGameSimpleDesc" rows="20" data-provide="markdown" placeholder="markdown格式">
+		    <textarea class="form-control" id="inputGameDetail" name="gamedetail" rows="20" data-provide="markdown" placeholder="markdown格式">
 			</textarea>
 		  </div>
 		  <button id="form-gamecreate-submit" type="submit" class="btn btn-default">递交</button>

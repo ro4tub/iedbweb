@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script src="/static/js/jquery.min.js" type="text/javascript" ></script>
 <script src="/static/js/bootstrap.min.js"></script>
 <script src="/static/js/fileinput.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="/static/js/bootstrap-markdown.js" type="text/javascript" charset="utf-8"></script>
@@ -30,5 +30,7 @@
 	//              	alert(data.Ret)
 	//          });
 	// });
-	$("#inputGameLogo").fileinput({'showUpload':false, 'previewFileType':'any'});
+	// $("#inputGameDetail").html(markdown.toHTML({{.Game.Detail}}))
+	$("#inputGameLogo").fileinput({'showUpload':false, 'previewFileType':'any', initialPreview: [
+		"<img src='{{.Game.Logo}}' class='file-preview-image'",]});
 </script>
