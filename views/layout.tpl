@@ -34,7 +34,7 @@
 				  {{if .Context.IsLogin}}
 	  			  <li><a href="/creategame">新建游戏</a></li>
 		  	      <li class="dropdown">
-		  	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">huangyaoshi <span class="caret"></span></a>
+		  	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{.Context.NickName}} <span class="caret"></span></a>
 		  	          <ul class="dropdown-menu" role="menu">
 		  	            <li><a href="#">个人信息</a></li>
 		  	            <li><a href="#">待审核</a></li>
@@ -68,7 +68,8 @@
 	                <input type="checkbox" value="remember-me"> 记住我
 	              </label>
 	            </div>
-	            <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+				<div class="label label-warning text-left last signintips"></div>
+	            <button class="btn btn-lg btn-primary btn-block signbutton" type="submit">登录</button>
 	          </form>
 		    </div>
 		  </div>
@@ -90,8 +91,9 @@
 				  <label for="inputPassword" class="sr-only">密码</label>
 				  <input type="password" id="inputPassword" name="password" class="form-control" placeholder="密码" required>
 				  <label for="inputPassword2" class="sr-only">重复密码</label>
-				  <input type="password" id="inputPassword2" class="form-control last" placeholder="重复密码" required>
-				  <button id="form-signup-submit" class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+				  <input type="password" id="inputPassword2" class="form-control" placeholder="重复密码" required>
+				  <div class="label label-warning text-left last signuptips"></div>
+				  <button id="form-signup-submit" class="btn btn-lg btn-primary btn-block signbutton" type="submit">注册</button>
 			  </form>
 		    </div>
 		  </div>

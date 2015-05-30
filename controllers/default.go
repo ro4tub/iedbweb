@@ -5,11 +5,12 @@ import (
 )
 
 type  Context struct{	
-	UserId	string
+	UserId	int64
+	NickName string
 }
 
 func (c *Context) IsLogin() bool {
-	return (c.UserId != "")
+	return (c.UserId != 0)
 }
 
 

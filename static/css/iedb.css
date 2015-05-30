@@ -38,6 +38,15 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.form-signin .last {
+  margin-bottom: 15px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin .signbutton {
+	margin-top: 5px;
+}
 
 .form-signup {
   max-width: 330px;
@@ -66,9 +75,13 @@ body {
   border-bottom-left-radius: 0;
 }
 .form-signup .last {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.form-signup .signbutton {
+	margin-top: 5px;
 }
 
 .close {
