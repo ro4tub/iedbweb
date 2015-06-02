@@ -33,7 +33,7 @@ CREATE TABLE `account` (
   UNIQUE KEY `IDX_NAME` (`name`),
   UNIQUE KEY `IDX_EMAIL` (`email`),
   KEY `IDX_NEP` (`password`,`name`,`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,7 +52,7 @@ CREATE TABLE `invite_code` (
   `modify_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `IDX_CODE` (`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,12 +64,14 @@ DROP TABLE IF EXISTS `item`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `item` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL DEFAULT '',
+  `name` varchar(64) NOT NULL,
+  `author_id` int(11) NOT NULL,
   `data` text NOT NULL,
   `version` int(11) NOT NULL,
   `add_time` datetime DEFAULT NULL,
   `modify_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -83,6 +85,7 @@ DROP TABLE IF EXISTS `item_edit`;
 CREATE TABLE `item_edit` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `item_id` int(11) NOT NULL,
+  `item_name` varchar(64) NOT NULL,
   `account_id` int(11) NOT NULL,
   `data` text,
   `comment` varchar(255) NOT NULL DEFAULT '',
@@ -90,9 +93,9 @@ CREATE TABLE `item_edit` (
   `review_id` int(11) DEFAULT NULL,
   `review_comment` varchar(255) DEFAULT NULL,
   `review_time` datetime DEFAULT NULL,
+  `version` int(11) DEFAULT NULL,
   `add_time` datetime DEFAULT NULL,
   `modify_time` datetime DEFAULT NULL,
-  `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -106,4 +109,4 @@ CREATE TABLE `item_edit` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-30 16:59:08
+-- Dump completed on 2015-06-03  0:18:01

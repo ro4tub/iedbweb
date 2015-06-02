@@ -80,7 +80,7 @@ func (this *UserController) Login()  {
 		this.ServeJson()
 		return
 	}
-	context := &Context{UserId: account.Id, NickName: account.Name}
+	context := &Context{UserId: account.Id, NickName: account.Name, Permission:account.Permission}
 	this.SetSession("CONTEXT", context)
 	// this.Redirect("/", 302)
 	this.Data["json"] = &Result{Ret:"ok"}

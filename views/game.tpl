@@ -7,8 +7,8 @@
 		  <div class="col-md-3 game-images item">
 			  <img src="{{.Game.Logo}}" class="game" alt="{{.Game.Name}}">
 			  <div>
-			  		<b class="variablecolor">平台:</b> <a href="#/search/p={{.Game.Platform}}">iOS</a><br/>
-			  		<b class="variablecolor">类型:</b> <a href="#/search/g={{.Game.Genre}}">RPG</a><br/>
+			  		<b class="variablecolor">平台:</b> <a href="#/search/p={{.Game.Platform}}">{{.Game.Platform}}</a><br/>
+			  		<b class="variablecolor">类型:</b> <a href="#/search/g={{.Game.Genre}}">{{.Game.Genre}}</a><br/>
 			  		<b class="variablecolor">标签:</b> {{.Game.Tags}}<br/>
 					<b class="variablecolor">简介:</b> {{.Game.SimpleDesc}}<br/>
 			  </div>

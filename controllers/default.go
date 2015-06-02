@@ -1,16 +1,26 @@
 package controllers
 
 import (
+	"fmt"
+	"encoding/json"
 	"github.com/astaxie/beego"
+	"github.com/ro4tub/iedbweb/models"
 )
 
 type  Context struct{	
 	UserId	int64
 	NickName string
+	Permission int // 0 普通 1 管理员
 }
 
+// 是否登录
 func (c *Context) IsLogin() bool {
 	return (c.UserId != 0)
+}
+
+// 是否是管理员
+func (c *Context) IsAdmin() bool {
+	return (c.Permission == 1)
 }
 
 
@@ -44,4 +54,19 @@ func (this *MainController) Get() {
 		this.Data["Context"] = context.(*Context)
 	}
 	this.Data["PageContext"] = &PageContext{TitleName: "IEDB - 首页"}
+	results, err := models.GetLatest10Items()
+	if err != nil {
+		this.Abort("500")
+	}
+	
+	gameresults := make([]Game, len(results))
+	var game Game
+	for k, e := range results {
+		if err := json.Unmarshal([]byte(e.Data), &game); err != nil {
+			this.Abort("500")
+		}
+		game.Logo = fmt.Sprintf("/static/upload/%d.png", e.Id)
+		gameresults[k] = game
+	}
+	this.Data["SearchResult"] = gameresults
 }

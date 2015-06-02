@@ -1,4 +1,4 @@
-		<form class="form-gamecreate" method="post" action="/game" enctype="multipart/form-data">
+		<form class="form-gamecreate" method="post" action="/creategame" enctype="multipart/form-data">
 		  <div class="form-group">
 		    <label for="inputGameName">游戏名字</label>
 		    <input type="text" class="form-control" id="inputGameName" name="gamename" placeholder="输入游戏名字">
@@ -6,30 +6,30 @@
 		  <div class="form-group">
 		    <label for="inputGameGenre">游戏类型</label>
 			<select class="form-control" id="inputGameGenre" name="gamegenre">
-			  <option value="1">动作</option>
-			  <option value="2">动作冒险</option>
-			  <option value="3">冒险解密</option>
-			  <option value="4">休闲益智</option>
-			  <option value="5">角色扮演</option>
-			  <option value="6">竞速</option>
-			  <option value="7">模拟</option>
-			  <option value="8">体育竞技</option>
-			  <option value="9">策略</option>
-		      <option value="99">其它</option>
+			  <option value="动作">动作</option>
+			  <option value="动作冒险">动作冒险</option>
+			  <option value="冒险解密">冒险解密</option>
+			  <option value="休闲益智">休闲益智</option>
+			  <option value="角色扮演">角色扮演</option>
+			  <option value="竞速">竞速</option>
+			  <option value="模拟">模拟</option>
+			  <option value="体育竞技">体育竞技</option>
+			  <option value="策略">策略</option>
+		      <option value="其它">其它</option>
 			</select>
 		  </div>
 		  <div class="form-group">
 		    <label for="inputGamePlatform">游戏平台</label>
 			<select class="form-control" id="inputGamePlatform" name="gameplatform">
-			  <option value="1">iOS</option>
-			  <option value="2">Android</option>
-			  <option value="3">Xbox 360</option>
-			  <option value="4">Xbox One</option>
-			  <option value="5">PS3</option>
-			  <option value="6">PS4</option>
-			  <option value="7">PC</option>
-			  <option value="8">浏览器</option>
-			  <option value="99">其它</option>
+			  <option value="iOS">iOS</option>
+			  <option value="Adnroid">Android</option>
+			  <option value="Xbox 360">Xbox 360</option>
+			  <option value="Xbox One">Xbox One</option>
+			  <option value="PS3">PS3</option>
+			  <option value="PS4">PS4</option>
+			  <option value="PC">PC</option>
+			  <option value="浏览器">浏览器</option>
+			  <option value="其它">其它</option>
 			</select>
 		  </div>
 		  <div class="form-group">

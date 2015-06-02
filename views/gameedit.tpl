@@ -6,30 +6,30 @@
 		  <div class="form-group">
 		    <label for="inputGameGenre">游戏类型</label>
 			<select class="form-control" id="inputGameGenre" name="gamegenre">
-			  <option value="1" {{if eq .Game.Genre "1"}}selected{{end}}>动作</option>
-			  <option value="2" {{if eq .Game.Genre "2"}}selected{{end}}>动作冒险</option>
-			  <option value="3" {{if eq .Game.Genre "3"}}selected{{end}}>冒险解密</option>
-			  <option value="4" {{if eq .Game.Genre "4"}}selected{{end}}>休闲益智</option>
-			  <option value="5" {{if eq .Game.Genre "5"}}selected{{end}}>角色扮演</option>
-			  <option value="6" {{if eq .Game.Genre "6"}}selected{{end}}>竞速</option>
-			  <option value="7" {{if eq .Game.Genre "7"}}selected{{end}}>模拟</option>
-			  <option value="8" {{if eq .Game.Genre "8"}}selected{{end}}>体育竞技</option>
-			  <option value="9" {{if eq .Game.Genre "9"}}selected{{end}}>策略</option>
-		      <option value="99"{{if eq .Game.Genre "99"}}selected{{end}}>其它</option>
+			  <option value="动作" {{if eq .Game.Genre "动作"}}selected{{end}}>动作</option>
+			  <option value="动作冒险" {{if eq .Game.Genre "动作冒险"}}selected{{end}}>动作冒险</option>
+			  <option value="冒险解密" {{if eq .Game.Genre "冒险解密"}}selected{{end}}>冒险解密</option>
+			  <option value="休闲益智" {{if eq .Game.Genre "休闲益智"}}selected{{end}}>休闲益智</option>
+			  <option value="角色扮演" {{if eq .Game.Genre "角色扮演"}}selected{{end}}>角色扮演</option>
+			  <option value="竞速" {{if eq .Game.Genre "竞速"}}selected{{end}}>竞速</option>
+			  <option value="模拟" {{if eq .Game.Genre "模拟"}}selected{{end}}>模拟</option>
+			  <option value="体育竞技" {{if eq .Game.Genre "体育竞技"}}selected{{end}}>体育竞技</option>
+			  <option value="策略" {{if eq .Game.Genre "策略"}}selected{{end}}>策略</option>
+		      <option value="其它"{{if eq .Game.Genre "其它"}}selected{{end}}>其它</option>
 			</select>
 		  </div>
 		  <div class="form-group">
 		    <label for="inputGamePlatform">游戏平台</label>
 			<select class="form-control" id="inputGamePlatform" name="gameplatform">
-			  <option value="1" {{if eq .Game.Platform "1"}}selected{{end}}>iOS</option>
-			  <option value="2" {{if eq .Game.Platform "2"}}selected{{end}}>Android</option>
-			  <option value="3" {{if eq .Game.Platform "3"}}selected{{end}}>Xbox 360</option>
-			  <option value="4" {{if eq .Game.Platform "4"}}selected{{end}}>Xbox One</option>
-			  <option value="5" {{if eq .Game.Platform "5"}}selected{{end}}>PS3</option>
-			  <option value="6" {{if eq .Game.Platform "6"}}selected{{end}}>PS4</option>
-			  <option value="7" {{if eq .Game.Platform "7"}}selected{{end}}>PC</option>
-			  <option value="8" {{if eq .Game.Platform "8"}}selected{{end}}>浏览器</option>
-			  <option value="99" {{if eq .Game.Platform "99"}}selected{{end}}>其它</option>
+			  <option value="iOS" {{if eq .Game.Platform "iOS"}}selected{{end}}>iOS</option>
+			  <option value="Android" {{if eq .Game.Platform "Android"}}selected{{end}}>Android</option>
+			  <option value="Xbox 360" {{if eq .Game.Platform "Xbox 360"}}selected{{end}}>Xbox 360</option>
+			  <option value="Xbox One" {{if eq .Game.Platform "Xbox One"}}selected{{end}}>Xbox One</option>
+			  <option value="PS3" {{if eq .Game.Platform "PS3"}}selected{{end}}>PS3</option>
+			  <option value="PS4" {{if eq .Game.Platform "PS4"}}selected{{end}}>PS4</option>
+			  <option value="PC" {{if eq .Game.Platform "PC"}}selected{{end}}>PC</option>
+			  <option value="浏览器" {{if eq .Game.Platform "浏览器"}}selected{{end}}>浏览器</option>
+			  <option value="其它" {{if eq .Game.Platform "其它"}}selected{{end}}>其它</option>
 			</select>
 		  </div>
 		  <div class="form-group">

@@ -9,6 +9,7 @@ import (
 func init() {
 	Log.Info("bootstrap starting ...")
 	// 初始化数据库
+	orm.Debug = true
 	orm.RegisterDataBase("default", "mysql", beego.AppConfig.String("dburl"), 30)
 	Log.Info("bootstrap end ...")
 }

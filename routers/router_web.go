@@ -30,4 +30,6 @@ func init() {
 	// 查看游戏的
 	beego.Router("/history/:id", &controllers.GameController{}, "get:GetEditHistory")
 	beego.Router("/audit", &controllers.UserController{}, "get:GetMyAudit")
+	// 搜索
+	beego.Router("/search", &controllers.GameController{}, "get:Search")
 }

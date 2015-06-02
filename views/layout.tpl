@@ -24,9 +24,9 @@
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <form class="navbar-form navbar-left" role="search">
+		      <form class="navbar-form navbar-left" role="search" method="get" action="/search">
 		        <div class="form-group">
-		          <input type="text" class="form-control" placeholder="搜索，比如天天魔斗士">
+		          <input type="text" class="form-control" name="t" placeholder="搜索，比如天天魔斗士">
 		        </div>
 		        <button type="submit" class="btn btn-default">搜索</button>
 		      </form>

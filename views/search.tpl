@@ -1,4 +1,4 @@
-Index:
+Search Result:
 <ul>
 
 		{{range .SearchResult}}
