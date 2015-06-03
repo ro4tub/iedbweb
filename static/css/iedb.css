@@ -132,3 +132,41 @@ body {
  	padding-top: 100px;
 	padding-left: 10px;
  }
+ 
+ /*搜索结果*/
+ .item {
+     padding-bottom: 12px;
+     border-bottom: 1px solid #efecec;
+     margin: 20px 15px 0px 0px;
+ }
+ 
+.item .itemlogo .logo {
+    width: 110px;
+    height: 110px;
+    float: left;
+    margin-right: 16px;
+ }
+ 
+ .item .itemtitle {
+     height: 24px;
+     line-height: 24px;
+     color: #521407;
+     font-size: 16px;
+     margin-bottom: 10px;
+ }
+ 
+ .item .itemtags {
+ 	 font-size: 10px;
+	 margin-top: 0px;
+     margin-bottom: 5px;
+ }
+ 
+ .item .itemtags .list-inline>li {
+ 	 padding-left: 0px;
+ }
+ 
+ 
+ .item .itemtext {
+	margin-top: 5px;
+ 	font-size: 8px;
+ }

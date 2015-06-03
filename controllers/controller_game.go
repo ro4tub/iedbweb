@@ -25,6 +25,16 @@ type Game struct {
 	Detail string `form:"gamedetail"`
 }
 
+// 搜索结果
+type GameSearchResult struct {
+	Name string 
+	Genre string
+	Platform string
+	Logo string
+	Tags []string
+	SimpleDesc string
+}
+
 var (
 	platformStr map[int]string
 	genreStr map[int]string
@@ -129,7 +139,7 @@ func (this *GameController) CreateGame()  {
 			this.Abort("500")
 		}
 		// 更新索引
-		gamedoc := models.GameDocument{Id: item.Id, Name: g.Name, Genre: g.Genre, Platform: g.Platform, Tags: strings.Split(g.Tags, ",;"), SimpleDesc: g.Tags, Detail: g.Detail}
+		gamedoc := models.GameDocument{Id: item.Id, Name: g.Name, Genre: g.Genre, Platform: g.Platform, Tags: strings.Split(g.Tags, ","), SimpleDesc: g.SimpleDesc, Detail: g.Detail}
 		if err := models.CreateSearchIndex(gamedoc); err != nil {
 			Log.Error("CreateSearchIndex failed: %v", err)
 		}
@@ -311,6 +321,7 @@ func (this *GameController) SaveGame()  {
 		// FIXME 增加编辑comment
 		itemedit := &models.ItemEdit{AccountId:context.UserId, ItemName: g.Name, Data:string(data), Comment:"修改", Status:0, AddTime:time.Now(), ModifyTime:time.Now()}
 		if context.IsAdmin() == true {
+			itemedit.ItemId = item.Id
 			itemedit.Status = 1
 			itemedit.Version = item.Version + 1
 			itemedit.ReviewId = context.UserId
@@ -334,7 +345,7 @@ func (this *GameController) SaveGame()  {
 				this.Abort("500")
 			}
 			// 更新索引
-			gamedoc := models.GameDocument{Id: item.Id, Name: g.Name, Genre: g.Genre, Platform: g.Platform, Tags: strings.Split(g.Tags, ",;"), SimpleDesc: g.Tags, Detail: g.Detail}
+			gamedoc := models.GameDocument{Id: item.Id, Name: g.Name, Genre: g.Genre, Platform: g.Platform, Tags: strings.Split(g.Tags, ","), SimpleDesc: g.SimpleDesc, Detail: g.Detail}
 			if err := models.CreateSearchIndex(gamedoc); err != nil {
 				Log.Error("CreateSearchIndex failed: %v", err)
 			}
@@ -365,9 +376,9 @@ func (this *GameController) Search() {
 	if err != nil {
 		this.Abort("500")
 	}
-	gameresults := make([]Game, len(results))
+	gameresults := make([]GameSearchResult, len(results))
 	for k, e := range results {
-		gameresults[k] = Game{Name: e.Name, Genre: e.Genre, Platform: e.Platform, Logo: fmt.Sprintf("/static/upload/%d.png", e.Id), Tags: strings.Join(e.Tags, ","), SimpleDesc: e.SimpleDesc}
+		gameresults[k] = GameSearchResult{Name: e.Name, Genre: e.Genre, Platform: e.Platform, Logo: fmt.Sprintf("/static/upload/%d.png", e.Id), Tags: e.Tags, SimpleDesc: e.SimpleDesc}
 	}
 	this.Data["SearchResult"] = gameresults
 	pagecontext := &PageContext{TitleName: "IEDB - 搜索: "+text}
