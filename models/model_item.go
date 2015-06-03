@@ -124,12 +124,12 @@ func GetItemByName(name string) *Item {
 	return &item
 }
 
-// 获得最新添加的10个
-func GetLatest10Items() ([]Item, error) {
+// 获得最新添加的50个
+func GetLatest50Items() ([]Item, error) {
 	Log.Debug("GetLatest10Items")
 	var items []Item
 	myorm := orm.NewOrm()
-	num, err := myorm. Raw("select * from item order by add_time limit 10").QueryRows(&items);
+	num, err := myorm. Raw("select * from item order by add_time limit 50").QueryRows(&items);
 	if err != nil {
 		if err == orm.ErrNoRows {
 			Log.Warn("no matched row")

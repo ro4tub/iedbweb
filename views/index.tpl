@@ -1,14 +1,12 @@
-Index:
-<ul>
-
-		{{range .SearchResult}}
-			<li>
-				name: {{.Name}} <br>
-				genre: {{.Genre}} <br>
-				platform: {{.Platform}} <br>
-				tags: {{.Tags}} <br>
-				simple desc: {{.SimpleDesc}} <br>
-				 <img src="{{.Logo}}" class="game" alt="{{.Name}}">
-		 	</li>
-		{{end}}
-</ul>
+<div class="row">				 
+ <ul class="img-list">
+	{{range .SearchResult}}
+		<li>
+		     <a href="/game/{{.Name}}">
+		       <img src="{{.Logo}}" class="logo"/>
+		       <span class="text-content"><span>{{.Name}}</span></span>
+		     </a>
+	 	</li>
+	{{end}}
+ </ul>
+</div>

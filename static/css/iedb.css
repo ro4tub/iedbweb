@@ -170,3 +170,52 @@ body {
 	margin-top: 5px;
  	font-size: 8px;
  }
+ 
+ 
+ /*首页*/
+ ul.img-list {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   text-align: center;
+ }
+ 
+ ul.img-list li {
+   display: inline-block;
+   height: 110px;
+   margin: 0 1em 1em 0;
+   position: relative;
+   width: 110px;
+ }
+ 
+ ul.img-list .logo {
+   width: 110px;
+   height: 110px;
+ }
+ 
+ span.text-content {
+   background: rgba(0,0,0,0.5);
+   color: white;
+   cursor: pointer;
+   display: table;
+   height: 110px;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 110px;
+   opacity: 0;
+   -webkit-transition: opacity 500ms;
+   -moz-transition: opacity 500ms;
+   -o-transition: opacity 500ms;
+   transition: opacity 500ms;
+ }
+ 
+ span.text-content span {
+   display: table-cell;
+   text-align: center;
+   vertical-align: middle;
+ }
+ 
+ ul.img-list li:hover span.text-content {
+   opacity: 1;
+ }

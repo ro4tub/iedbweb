@@ -54,7 +54,7 @@ func (this *MainController) Get() {
 		this.Data["Context"] = context.(*Context)
 	}
 	this.Data["PageContext"] = &PageContext{TitleName: "IEDB - 首页"}
-	results, err := models.GetLatest10Items()
+	results, err := models.GetLatest50Items()
 	if err != nil {
 		this.Abort("500")
 	}
