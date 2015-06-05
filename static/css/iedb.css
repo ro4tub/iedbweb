@@ -219,3 +219,7 @@ body {
  ul.img-list li:hover span.text-content {
    opacity: 1;
  }
+ 
+ .clickable {
+     cursor: pointer;
+ }

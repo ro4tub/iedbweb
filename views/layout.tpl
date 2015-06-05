@@ -19,7 +19,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="/">IEDB</a>
+		      <a class="navbar-brand" href="/">IEDb</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,8 +42,8 @@
 		  	          </ul>
 		  	       </li>
 				   {{else}}
-		  			  <li><a data-toggle="modal" data-target=".signin">登录</a></li>
-		  			  <li><a data-toggle="modal" data-target=".signup">注册</a></li>
+		  			  <li><a data-toggle="modal" data-target=".signin" class="clickable">登录</a></li>
+		  			  <li><a data-toggle="modal" data-target=".signup" class="clickable">注册</a></li>
 				   {{end}}
 		      </ul>
 		    </div><!-- /.navbar-collapse -->

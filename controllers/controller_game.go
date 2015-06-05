@@ -92,7 +92,7 @@ func (this *GameController) PreCreateGame()  {
 	} else {
 		this.Data["Context"] = context.(*Context)
 	}
-	pagecontext := &PageContext{TitleName: "IEDB - 创建游戏"}
+	pagecontext := &PageContext{TitleName: "IEDb - 创建游戏"}
 	this.Data["PageContext"] = pagecontext
 }
 
@@ -199,7 +199,7 @@ func (this *GameController) GetGame()  {
 	game.Logo = fmt.Sprintf("/static/upload/%d.png", item.Id)
 	this.Data["Game"] = game
 	
-	pagecontext := &PageContext{TitleName: "IEDB - " + game.Name}
+	pagecontext := &PageContext{TitleName: "IEDb - " + game.Name}
 	this.Data["PageContext"] = pagecontext
 }
 
@@ -233,7 +233,7 @@ func (this *GameController) EditGame()  {
 	}
 	this.Data["Game"] = game
 	
-	pagecontext := &PageContext{TitleName: "IEDB - 编辑 - " + game.Name}
+	pagecontext := &PageContext{TitleName: "IEDb - 编辑 - " + game.Name}
 	this.Data["PageContext"] = pagecontext
 }
 
@@ -381,7 +381,7 @@ func (this *GameController) Search() {
 		gameresults[k] = GameSearchResult{Name: e.Name, Genre: e.Genre, Platform: e.Platform, Logo: fmt.Sprintf("/static/upload/%d.png", e.Id), Tags: e.Tags, SimpleDesc: e.SimpleDesc}
 	}
 	this.Data["SearchResult"] = gameresults
-	pagecontext := &PageContext{TitleName: "IEDB - 搜索: "+text}
+	pagecontext := &PageContext{TitleName: "IEDb - 搜索: "+text}
 	this.Data["PageContext"] = pagecontext
 }
 

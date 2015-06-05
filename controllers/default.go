@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"github.com/astaxie/beego"
 	"github.com/ro4tub/iedbweb/models"
+	. "github.com/ro4tub/gamedb/util"
 )
 
 type  Context struct{	
@@ -53,9 +54,10 @@ func (this *MainController) Get() {
 	} else {
 		this.Data["Context"] = context.(*Context)
 	}
-	this.Data["PageContext"] = &PageContext{TitleName: "IEDB - 首页"}
+	this.Data["PageContext"] = &PageContext{TitleName: "IEDb - 首页"}
 	results, err := models.GetLatest50Items()
 	if err != nil {
+		Log.Error("GetLatest50Items failed: %v", err)
 		this.Abort("500")
 	}
 	
@@ -63,6 +65,7 @@ func (this *MainController) Get() {
 	var game Game
 	for k, e := range results {
 		if err := json.Unmarshal([]byte(e.Data), &game); err != nil {
+			Log.Error("json.Unmarshal failed: %v", err)
 			this.Abort("500")
 		}
 		game.Logo = fmt.Sprintf("/static/upload/%d.png", e.Id)
