@@ -129,7 +129,7 @@ func GetLatest50Items() ([]Item, error) {
 	Log.Debug("GetLatest10Items")
 	var items []Item
 	myorm := orm.NewOrm()
-	num, err := myorm. Raw("select * from item order by add_time limit 50").QueryRows(&items);
+	num, err := myorm.Raw("select * from item order by add_time limit 50").QueryRows(&items)
 	if err != nil {
 		if err == orm.ErrNoRows {
 			Log.Warn("no matched row")
@@ -140,4 +140,24 @@ func GetLatest50Items() ([]Item, error) {
 	}
 	Log.Debug("got %d items", num)
 	return items, nil
+}
+
+// 获得所有的Item， 有性能问题，使用请注意
+// TODO 分页查询
+func GetItems() ([]Item, error) {
+	Log.Debug("GetItems")
+	var items []Item
+	myorm := orm.NewOrm()
+	num, err := myorm.Raw("select * from item").QueryRows(&items)
+	if err != nil {
+		if err == orm.ErrNoRows {
+			Log.Warn("no matched row")
+		} else {
+			Log.Error("select from item failed", err)
+		}
+		return nil, err
+	}
+	Log.Debug("got %d items", num)
+	return items, nil
+	
 }
