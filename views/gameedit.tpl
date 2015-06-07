@@ -42,13 +42,11 @@
 		  </div>
 		  <div class="form-group">
 		    <label for="inputGameSimpleDesc">游戏简单描述(140字)</label>
-		    <textarea class="form-control" id="inputGameSimpleDesc" name="gamesimpledesc" rows="3">{{.Game.SimpleDesc}}
-			</textarea>
+		    <textarea class="form-control" id="inputGameSimpleDesc" name="gamesimpledesc" rows="3">{{.Game.SimpleDesc}}</textarea>
 		  </div>
 		  <div class="form-group">
 		    <label for="inputGameDetail">游戏详细描述</label>
-		    <textarea class="form-control" id="inputGameDetail" name="gamedetail" rows="20" data-provide="markdown">{{.Game.Detail}}
-			</textarea>
+		    <textarea class="form-control" id="inputGameDetail" name="gamedetail" rows="20" data-provide="markdown">{{.Game.Detail}}</textarea>
 		  </div>
 		  <button id="form-gamecreate-submit" type="submit" class="btn btn-default">递交</button>
 		</form>
